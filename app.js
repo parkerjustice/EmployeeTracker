@@ -70,8 +70,8 @@ function employee() {
     var query = 'SELECT * FROM employee';
     connect.query(query, function(err, res) {
         if (err) throw err;
-        console.log(res.length + ' employees found!');
-        console.table('All Employees:', res); 
+        console.log(res.length + ' someones here');
+        console.table('Everyone', res); 
         options();
     })
 };
@@ -80,7 +80,7 @@ function departments() {
     var query = 'SELECT * FROM department';
     connect.query(query, function(err, res) {
         if(err)throw err;
-        console.table('All Departments:', res);
+        console.table('Every Department', res);
         options();
     })
 };
@@ -89,30 +89,30 @@ function roles() {
     var query = 'SELECT * FROM role';
     connect.query(query, function(err, res){
         if (err) throw err;
-        console.table('All Roles:', res);
+        console.table('Every Role:', res);
         options();
     })
 };
 
 function employee() {
-    connect.query('SELECT * FROM role', function (err, res) {
+    connect.query('SELECT * FROM the role', function (err, res) {
         if (err) throw err;
         ifind
             .prompt([
                 {
-                    name: 'first_name',
+                    name: 'first',
                     type: 'input', 
-                    message: "What is the employee's fist name? ",
+                    message: "Whats their first name ",
                 },
                 {
-                    name: 'last_name',
+                    name: 'last',
                     type: 'input', 
-                    message: "What is the employee's last name? "
+                    message: "Whats their last "
                 },
                 {
-                    name: 'manager_id',
+                    name: 'ID',
                     type: 'input', 
-                    message: "What is the employee's manager's ID? "
+                    message: "Enter manager ID "
                 },
                 {
                     name: 'role', 
@@ -124,7 +124,7 @@ function employee() {
                     }
                     return roleArray;
                     },
-                    message: "What is this employee's role? "
+                    message: "What is their role in the company  "
                 }
                 ]).then(function (answer) {
                     let role_id;
@@ -144,7 +144,7 @@ function employee() {
                     },
                     function (err) {
                         if (err) throw err;
-                        console.log('Your employee has been added!');
+                        console.log('This employee has been added to the base');
                         options();
                     })
                 })
@@ -156,7 +156,7 @@ function department() {
             {
                 name: 'newDepartment', 
                 type: 'input', 
-                message: 'Which department would you like to add?'
+                message: 'which department is needed '
             }
             ]).then(function (answer) {
                 connect.query(
@@ -167,7 +167,7 @@ function department() {
                 var query = 'SELECT * FROM department';
                 connect.query(query, function(err, res) {
                 if(err)throw err;
-                console.log('Your department has been added!');
+                console.log('Your department is now added ');
                 console.table('All Departments:', res);
                 options();
                 })
@@ -182,12 +182,12 @@ function role() {
             {
                 name: 'new_role',
                 type: 'input', 
-                message: "What new role would you like to add?"
+                message: "What role do you wish to add "
             },
             {
                 name: 'salary',
                 type: 'input',
-                message: 'What is the salary of this role? (Enter a number)'
+                message: 'What is that salary for this new position enter here'
             },
             {
                 name: 'Department',
@@ -217,7 +217,7 @@ function role() {
                 },
                 function (err, res) {
                     if(err)throw err;
-                    console.log('Your new role has been added!');
+                    console.log('Your role is now available');
                     console.table('All Roles:', res);
                     options();
                 })
