@@ -21,6 +21,8 @@ function options() {
             name: 'action',
             type: 'list',
             message: 'Welcome, what do you need?',
+
+//these are all the choices
             choices: [
                     'all of the employees',
                     'all of the departments',
