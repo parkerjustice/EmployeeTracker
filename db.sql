@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS DBemployee;
+CREATE DATABASE DBemployee;
+USE DBemployee;
+

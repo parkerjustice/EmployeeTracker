@@ -9,7 +9,7 @@ VALUES
 ('Marketing'),
 ('HR');
 
-INSERT INTO role (title, salary, department_id)
+INSERT INTO roles (title, salary, department_id)
 VALUES
 ('Production Assistant', 40000, 10),
 ('Production Manager', 120000, 3),
